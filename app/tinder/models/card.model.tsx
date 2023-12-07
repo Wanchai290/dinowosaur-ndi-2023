@@ -11,7 +11,7 @@ export interface Answer {
     link: string
 }
 
-export interface Card {
+export interface CardModel {
     question: Question,
     answer: Answer
 }

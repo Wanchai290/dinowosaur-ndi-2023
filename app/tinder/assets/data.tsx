@@ -1,6 +1,6 @@
-import { Card } from "../models/card.model"
+import { CardModel } from "../models/card.model"
 
-export const tinderDatas: Card[] = [
+export const tinderDatas: CardModel[] = [
   {
     question: {
       title: "Réchauffement climatique",
