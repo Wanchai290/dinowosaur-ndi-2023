@@ -1,4 +1,4 @@
-import { CardModel } from "../models/card.model";
+import {CardModel} from "../models/card.model";
 
 import {tinderDatas} from "../assets/data"
 
