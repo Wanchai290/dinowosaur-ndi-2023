@@ -19,7 +19,7 @@ const games: Game[] = [
     desc: "Poses tes questions a Jamy, l'expert du climat",
   },
   {
-    img: "/idee_recues.png",
+    img: "/message.webp",
     title: "Idées reçues",
     desc: "Qu’en pensent les gens ?",
   },
@@ -46,9 +46,7 @@ export default function Home() {
             imgSrc={"/games/" + game.img}
             key={game.title}
           >
-            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              {game.title}
-            </h5>
+            <h5 className="text-2xl font-bold tracking-tight">{game.title}</h5>
             <p className="font-normal text-gray-700 dark:text-gray-400">
               {game.desc}
             </p>
