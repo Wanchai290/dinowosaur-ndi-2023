@@ -6,6 +6,7 @@ export default interface SpriteModel {
 export interface AnswerModel {
     text: string;
     continue: number;
+    weight: number;
 }
 
 export interface DialogModel {
