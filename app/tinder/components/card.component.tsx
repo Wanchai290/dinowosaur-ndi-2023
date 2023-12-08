@@ -27,12 +27,12 @@ export default function CardComponent({data, isQuestion, answerCorrect, nextCard
         <div className="flex flex-row justify-between pt-2">
           <Button color="indigo"
             className="w-10 h-10 rounded-full p-10"
-            onClick={() => {answer(true)}}>
+            onClick={() => {answer(false)}}>
             <HiOutlineX className="h-10 w-10"/>
           </Button>
           <Button color="lime"
             className="w-10 h-10 rounded-full p-10"
-            onClick={() => {answer(false)}}>
+            onClick={() => {answer(true)}}>
             <HiOutlineCheck className="h-10 w-10"/>
           </Button>
         </div>

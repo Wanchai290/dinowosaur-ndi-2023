@@ -9,7 +9,7 @@ import { useState } from "react";
 export default function CardLoaderComponent() {
   const [currentCard , setCurrentCard] = useState<CardModel | undefined>();
   const [questionMode, setQuestionMode] = useState<boolean>();
-  const [score, setScore] = useState<number>(0);
+  const [score, setScore] = useState<number>();
   const [questionNumber, setQuestionNumber] = useState<number>(0);
   const [answerCorrect, setAnswerCorrect] = useState<boolean>(false);
     
@@ -22,7 +22,7 @@ export default function CardLoaderComponent() {
   function answer(response: boolean) {
     setScore(setUserResponse(response));
     setQuestionMode(false);
-    setAnswerCorrect(response === currentCard?.question.answer);
+    setAnswerCorrect(response == currentCard?.question.answer);
   }
   
   function newGame(){
@@ -30,6 +30,7 @@ export default function CardLoaderComponent() {
     setCurrentCard(nextCard());
     setQuestionMode(true);
     setQuestionNumber(1);
+    setScore(0);
   }
 
   if (currentCard){
