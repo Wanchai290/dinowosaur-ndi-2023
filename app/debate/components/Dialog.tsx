@@ -238,7 +238,7 @@ const dialogs: DialogModel[] = [
                 weight: 1,
             },
             {
-                text: "Parler de l’augmentation de GES des activités humaines.",
+                text: "Parler des GES des activités humaines.",
                 continue: 16,
                 weight: 1,
             },
@@ -488,7 +488,7 @@ const dialogs: DialogModel[] = [
                 weight: 1,
             },
             {
-                "text": "S’engager dans le soutien de la fission nucléaire",
+                "text": "Engager la fission nucléaire",
                 continue: 33001,
                 weight: -1,
             }
@@ -611,17 +611,17 @@ const dialogs: DialogModel[] = [
         canBeAnswered: true,
         answers: [
             {
-                text: "Parler de l’investissement dans les énergies renouvelables.",
+                text: "Investissement dans les énergies renouvelables.",
                 continue: 41,
                 weight: 1,
             },
             {
-                text: "Parler de la participation de chacun.",
+                text: "Participation de chacun.",
                 continue: 41,
                 weight: 1,
             },
             {
-                text: "Parler des moeurs et politiques qui doivent inclure le climat.",
+                text: "Moeurs & Politiques pour le climat",
                 continue: 41,
                 weight: 1,
             },
@@ -828,7 +828,7 @@ const dialogs: DialogModel[] = [
         canBeAnswered: true,
         answers: [
             {
-                text: "Présenter des papiers sur le blanchissement des récifs.",
+                text: "Papiers sur blanchissement des récifs.",
                 continue: 491,
                 weight: 1,
             },

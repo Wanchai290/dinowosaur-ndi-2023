@@ -30,6 +30,7 @@ export class DialogDebate {
         this.dialogs = dialogs;
         this.dialogs_id = dialogs.map((dialog) => dialog.id);
         this.currentDialog = 0;
+        this.nbBonneReponse = 0;
     }
 
     getDialog(id: number): DialogModel {
