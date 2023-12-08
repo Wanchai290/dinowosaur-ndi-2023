@@ -2,7 +2,7 @@ import { DialogModel } from "../models/debate.model";
 const assetRoot = "debate/assets/"
 const dialogs: DialogModel[] = [
     {
-        id: 1,
+        id: 0,
         speaker: {
             path : "acc0",
             facing: "right",
