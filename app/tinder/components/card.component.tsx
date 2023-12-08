@@ -4,12 +4,13 @@ import { Button, Card } from "flowbite-react";
 import { HiOutlineCheck, HiOutlineX } from 'react-icons/hi';
 interface Props {
     data: CardModel,
-    isQuestion: boolean,
-    answerCorrect: boolean
+    isQuestion: boolean | undefined,
+    answerCorrect: boolean,
+    nextCard: Function,
+    answer: Function
 }
 
-export default function CardComponent({data, isQuestion, answerCorrect}: Readonly<Props>) {
-  console.log(isQuestion);
+export default function CardComponent({data, isQuestion, answerCorrect, nextCard, answer}: Readonly<Props>) {
   if(isQuestion){
     return (
       <div className="w-4/5 md:w-3/5 xl:w-2/5 2xl:w-1/5">
@@ -25,11 +26,13 @@ export default function CardComponent({data, isQuestion, answerCorrect}: Readonl
         </Card>
         <div className="flex flex-row justify-between pt-2">
           <Button color="indigo"
-            className="w-10 h-10 rounded-full p-10">
+            className="w-10 h-10 rounded-full p-10"
+            onClick={() => {answer(true)}}>
             <HiOutlineX className="h-10 w-10"/>
           </Button>
           <Button color="lime"
-            className="w-10 h-10 rounded-full p-10">
+            className="w-10 h-10 rounded-full p-10"
+            onClick={() => {answer(false)}}>
             <HiOutlineCheck className="h-10 w-10"/>
           </Button>
         </div>
@@ -66,6 +69,9 @@ export default function CardComponent({data, isQuestion, answerCorrect}: Readonl
             </svg>
           </Button>
         </Card>
+        <div className="flex flex-row justify-center pt-8">
+          <Button onClick={() => {nextCard()}}>Prochaine question</Button>
+        </div>
       </div>
     );
   }

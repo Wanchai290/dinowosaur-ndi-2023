@@ -33,5 +33,5 @@ export function setUserResponse(response: boolean): number {
 }
 
 function getNCards(numberCards: number): CardModel[] {
-  return numberCards > 0 ? [...tinderDatas].sort(() => 0.5 - Math.random()).slice(0, numberCards) : [];
+  return numberCards > 0 ? [...tinderDatas].sort(() => 0.5 - Math.random()).slice(0, numberCards + 1) : [];
 }
