@@ -37,10 +37,10 @@ export default function RootLayout({
           inter.className
         }
       >
-        <Navbar fluid rounded>
+        <Navbar fluid rounded className="dark:bg-gradient-to-l from-emerald-700 from-10% to-slate-800 to-90%">
           <NavbarBrand as={Link} href="/">
             <img
-              src="/favicon.png"
+              src="/favicon.webp"
               className="mr-3 h-6 sm:h-9"
               alt="Flowbite React Logo"
             />

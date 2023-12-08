@@ -46,7 +46,7 @@ export default function Home() {
       <div className="flex gap-4 flex-col md:flex-row">
         {games.map((game) => (
           <Card
-            className="w-full md:max-w-sm"
+            className="w-full md:max-w-sm dark:bg-gradient-to-b from-emerald-700 from-10% to-slate-800 to-90%"
             //imgAlt="Meaningful alt text for an image that is not purely decorative"
             //imgSrc={"/games/" + game.img}
             renderImage={() => <Image width={500} height={500} src={game.img} alt={game.title} />}
