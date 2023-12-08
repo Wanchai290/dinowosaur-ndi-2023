@@ -9,9 +9,6 @@ import {
   NavbarToggle,
   ThemeModeScript,
   Footer,
-  FooterBrand,
-  FooterDivider,
-  FooterCopyright,
 } from "flowbite-react";
 import "./globals.css";
 import Head from "next/head";
@@ -60,13 +57,13 @@ export default function RootLayout({
             <NavbarLink href="/" active>
               Home
             </NavbarLink>
-            <NavbarLink as={Link} href="#">
+            <NavbarLink as={Link} href="/about">
               About
             </NavbarLink>
             <NavbarLink as={Link} href="/sources">
               Sources
             </NavbarLink>
-            <NavbarLink 
+            <NavbarLink
               className="flex gap-x-0.5"
               as={Link}
               href="https://github.com/Leikoe/dinowosaur-ndi-2023"
