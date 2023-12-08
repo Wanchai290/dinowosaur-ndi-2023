@@ -520,5 +520,70 @@ export const tinderDatas: CardModel[] = [
       text: "Vrai. Les accords internationaux tels que l'Accord de Paris témoignent d'un engagement mondial pour réduire les émissions de gaz à effet de serre et atténuer les impacts du changement climatique.",
       link: "https://reseauactionclimat.org/urgence-climatique/"
     }
+  },
+  {
+    question: {
+      title: "Émissions de méthane",
+      question: "Les émissions de méthane contribuent-elles au changement climatique?",
+      answer: true,
+      imageLink: "/games/tinder/images/image_1.png"
+    },
+    answer: {
+      imageLink: "/games/tinder/images/image_1.png",
+      text: "Vrai. Le méthane est un gaz à effet de serre puissant, contribuant au réchauffement climatique. Les activités humaines telles que l'élevage de bétail et l'exploitation des combustibles fossiles sont des sources majeures d'émissions de méthane.",
+      link: "https://www.ipcc.ch/"
+    }
+  },
+  {
+    question: {
+      title: "Conséquences sur les océans",
+      question: "Comment le changement climatique affecte-t-il les océans?",
+      answer: true,
+      imageLink: "/games/tinder/images/image_2.png"
+    },
+    answer: {
+      imageLink: "/games/tinder/images/image_2.png",
+      text: "Vrai. Le changement climatique impacte les océans en provoquant la montée du niveau de la mer, l'acidification, la perte de biodiversité marine et la modification des courants océaniques.",
+      link: "https://www.hautconseilclimat.fr/"
+    }
+  },
+  {
+    question: {
+      title: "Rôle des forêts",
+      question: "Quel est le rôle des forêts dans la lutte contre le changement climatique?",
+      answer: true,
+      imageLink: "/games/tinder/images/image_3.png"
+    },
+    answer: {
+      imageLink: "/games/tinder/images/image_3.png",
+      text: "Vrai. Les forêts jouent un rôle crucial en absorbant le dioxyde de carbone de l'atmosphère. La préservation des forêts et la reforestation sont des stratégies importantes pour l'atténuation du changement climatique.",
+      link: "https://reseauactionclimat.org/urgence-climatique/"
+    }
+  },
+  {
+    question: {
+      title: "Innovation technologique",
+      question: "L'innovation technologique peut-elle contribuer à résoudre le changement climatique?",
+      answer: true,
+      imageLink: "/games/tinder/images/image_4.png"
+    },
+    answer: {
+      imageLink: "/games/tinder/images/image_4.png",
+      text: "Vrai. Les avancées technologiques, telles que les énergies renouvelables, le stockage d'énergie et les pratiques agricoles durables, sont essentielles pour atteindre les objectifs de réduction des émissions de gaz à effet de serre.",
+      link: "https://data-transitions2050.ademe.fr/"
+    }
+  },
+  {
+    question: {
+      title: "Adaptation aux changements climatiques",
+      question: "En quoi consiste l'adaptation aux changements climatiques?",
+      answer: true,
+      imageLink: "/games/tinder/images/image_5.png"
+    },
+    answer: {
+      imageLink: "/games/tinder/images/image_5.png",
+      text: "Vrai. L'adaptation implique l'ajustement des sociétés et des écosystèmes aux impacts inévitables du changement climatique. Cela comprend la gestion des risques, la résilience communautaire et les pratiques agricoles adaptatives.",
+      link: "https://www.hautconseilclimat.fr/"
+    }
   }
 ];
