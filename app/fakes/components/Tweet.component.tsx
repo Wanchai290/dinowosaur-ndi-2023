@@ -10,11 +10,11 @@ export default function TweetComponent({tweet}: Readonly<Props>) {
     const [explainMode, setExplainMode] = useState(false);
 
     return(
-        <div className="p-3">
+        <div className="p-3 h-full">
             <Card onClick={() => setExplainMode(!explainMode)}
             className={explainMode
-              ? "dark:bg-gradient-to-b from-emerald-700 from-0% to-slate-800 to-60% cursor-pointer"
-            : "dark:bg-gradient-to-b from-blue-400 from-0% to-slate-800 to-60% cursor-pointer"}>
+              ? "h-full dark:bg-gradient-to-b from-emerald-700 from-0% to-slate-800 to-60% cursor-pointer"
+            : "h-full dark:bg-gradient-to-b from-blue-400 from-0% to-slate-800 to-60% cursor-pointer"}>
                 <Avatar img={tweet.pdpLink} rounded>
                     <div className="space-y-1 font-medium dark:text-white">
                         <div className="text-2xl ">{tweet.username}</div>
