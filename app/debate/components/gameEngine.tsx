@@ -107,9 +107,11 @@ function render(dialogs: DialogDebate, answerSet: number, game: KaboomCtx): Game
 export default function debate(canvasref: HTMLCanvasElement, dialogs: DialogDebate)
 {
     const assetRoot = "debate/assets/"
+    const width = canvasref.parentElement?.clientWidth ? canvasref.parentElement?.clientWidth : 1000
+    const height = canvasref.parentElement?.clientHeight ? canvasref.parentElement?.clientHeight : 1000
     const game = kaboom({
-        width: canvasref.parentElement?.clientWidth,
-        height: canvasref.parentElement?.clientHeight - 60,
+        width: width,
+        height: height - 60,
         // if you don't want to import to the global namespace
         global: false,
         // if you don't want kaboom to create a canvas and insert under document.body
