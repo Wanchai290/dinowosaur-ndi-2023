@@ -1,16 +1,20 @@
 "use client";
 import Image from "next/image";
-import kaboomGame from "./kaboomGame";
+import debate from "./components/gameEngine";
+// import kaboomGame from "./kaboomGame";
+import React from "react";
 
 
 export default function Home() {
+	const canvasRef = React.useRef<HTMLCanvasElement>();
+    React.useEffect(() => {
+        if (!canvasRef.current) return;
+        const game = debate(canvasRef.current);
+    });
+
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
-            <div className="flex gap-4 flex-col md:flex-row">
-                {/* Render your React content here */}
-            </div>
-            {/* Include the Kaboom game component */}
-            // TODO
+        <main className="flex min-h-screen max-h-screen min-w-full flex-col items-center justify-between">
+            <canvas id="game-canvas" ref={canvasRef} />
         </main>
     );
 }
