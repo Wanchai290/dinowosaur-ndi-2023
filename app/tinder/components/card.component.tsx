@@ -57,7 +57,7 @@ export default function CardComponent({data, isQuestion, answerCorrect, nextCard
           <p>
             {data.answer.text}
           </p>
-          <Button onClick={() => window.open(data.answer.link, '_blank')}  >
+          <Button outline gradientDuoTone="redToYellow" onClick={() => window.open(data.answer.link, '_blank')}  >
             {"Plus d\'informations"}
             <svg className="-mr-1 ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg">
@@ -70,7 +70,7 @@ export default function CardComponent({data, isQuestion, answerCorrect, nextCard
           </Button>
         </Card>
         <div className="flex flex-row justify-center pt-8">
-          <Button onClick={() => {nextCard()}}>Prochaine question</Button>
+          <Button outline gradientDuoTone="redToYellow"  onClick={() => {nextCard()}}>Prochaine question</Button>
         </div>
       </div>
     );
