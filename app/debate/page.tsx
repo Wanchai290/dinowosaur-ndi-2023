@@ -1,7 +1,5 @@
 "use client";
-import Image from "next/image";
 import debate from "./components/gameEngine";
-// import kaboomGame from "./kaboomGame";
 import React from "react";
 import Dialogs from "./components/Dialog";
 import { DialogDebate } from "./models/debate.model";
