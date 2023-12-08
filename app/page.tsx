@@ -35,19 +35,19 @@ const games: Game[] = [
     img: messagePic,
     title: "Idées reçues",
     desc: "Qu’en pensent les gens ?",
-    link: "/tinder",
+    link: "/fakes",
   },
   {
     img: imposteurPic,
     title: "L’imposteur",
     desc: "Trouves l’imposteur parmis les PNJs.",
-    link: "/tinder",
+    link: "/rpg_game",
   },
   {
     img: debatePic,
     title: "Débat d'une vie durable",
     desc: "Pars en date avec Tomette, activiste climatique.",
-    link: "/tinder",
+    link: "/debate",
   },
 ];
 
