@@ -61,7 +61,7 @@ export default function Page() {
   return(
     <main className="h-screen gap-0">
     <div className="flex shadow-[0_15px_30px_-15px_rgb(6,78,59)] justify-self-center max-w-50 h-14 bg-color-gray-500 m-5">
-      <p className="m-5"> Ce site a été réalisé dans le contexte de la nuit de l'info 2023, en équipe de 7.</p>
+      <p className="m-5"> Ce site a été réalisé dans le contexte de la nuit de l\'info 2023, en équipe de 7.</p>
     </div>
     <div className="flex flex-row flex-wrap justify-around py-5">
     {people.map((p) => (
