@@ -42,13 +42,11 @@ const games: Game[] = [
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 ">
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="flex gap-4 flex-col md:flex-row">
         {games.map((game) => (
           <Card
-            className="w-full md:max-w-sm dark:bg-gradient-to-b from-emerald-700 from-10% to-slate-800 to-90%"
-            //imgAlt="Meaningful alt text for an image that is not purely decorative"
-            //imgSrc={"/games/" + game.img}
+            className="w-full md:max-w-sm dark:bg-gradient-to-b from-emerald-700 from-10% to-slate-800 to-90% hover:opacity-40 transition duration-500 cursor-pointer"
             renderImage={() => <Image width={500} height={500} src={game.img} alt={game.title} />}
             key={game.title}
           >
