@@ -35,7 +35,7 @@ export default function CardLoaderComponent() {
 
   if (currentCard){
     return(
-      <div className="flex flex-col items-center justify-center w-full h-screen">
+      <div className="flex flex-col items-center w-full h-screen">
         <p>{questionNumber} / 10</p>
         <CardComponent data={currentCard}
           isQuestion={questionMode}
@@ -48,8 +48,8 @@ export default function CardLoaderComponent() {
   } else {
     if (score) {
       return (
-        <div className="flex flex-col items-center justify-center w-full h-screen">
-          <Button onClick={() => {
+        <div className="flex flex-col items-center w-full h-screen">
+          <Button outline gradientDuoTone="redToYellow"  onClick={() => {
             newGame();
           }}>Lancer la partie</Button>
           <p>Quizz terniné</p>
@@ -58,8 +58,8 @@ export default function CardLoaderComponent() {
       );
     } else {
       return (
-        <div className="flex flex-col items-center justify-center w-full h-screen">
-          <Button onClick={() => {
+        <div className="flex flex-col items-center w-full h-screen">
+          <Button outline gradientDuoTone="redToYellow"  onClick={() => {
             newGame();
           }}>Lancer la partie</Button>
         </div>
