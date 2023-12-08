@@ -67,7 +67,7 @@ const dialogs: DialogModel[] = [
             {
                 text: "Oui, monsieur le juge.",
                 continue: 6,
-                weight: 1,
+                weight: 0,
             },
             {
                 text: "Non, monsieur le juge.",
@@ -245,7 +245,7 @@ const dialogs: DialogModel[] = [
             {
                 text: "Parler des besoins humains.",
                 continue: 15001,
-                weight: 0,
+                weight: -1,
             },
         ],
         continue: 15,
@@ -490,7 +490,7 @@ const dialogs: DialogModel[] = [
             {
                 "text": "S’engager dans le soutien de la fission nucléaire",
                 continue: 34,
-                weight: 1,
+                weight: -1,
             }
         ],
         continue: 33,
@@ -628,7 +628,7 @@ const dialogs: DialogModel[] = [
             {
                 text: "Parler des batteries rechargeables.",
                 continue: 40001,
-                weight: 1,
+                weight: -1,
             },
             
         ],

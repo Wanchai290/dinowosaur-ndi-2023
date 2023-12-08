@@ -24,6 +24,7 @@ export class DialogDebate {
     dialogs: DialogModel[];
     dialogs_id: number[];
     currentDialog: number;
+    nbBonneReponse: number;
 
     constructor(dialogs: DialogModel[]) {
         this.dialogs = dialogs;
@@ -36,6 +37,9 @@ export class DialogDebate {
     }
 
     getCurrentDialog(): DialogModel {
+        if (this.currentDialog === -1) {
+            this.setFinished();
+        }
         return this.dialogs[this.dialogs_id.indexOf(this.currentDialog)];
     }
 
@@ -60,8 +64,17 @@ export class DialogDebate {
     }
 
     nextDialogAnswer(answer: AnswerModel): DialogModel {
+        this.nbBonneReponse += answer.weight;
         this.currentDialog = this.answerCurrentDialog(answer);
         return this.getCurrentDialog();
+    }
+
+    setFinished(): void {
+        if (this.nbBonneReponse >= 0) {
+            this.currentDialog = 64;
+        } else {
+            this.currentDialog = 70;
+        }
     }
 
 }
