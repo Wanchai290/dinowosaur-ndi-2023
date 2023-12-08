@@ -1,6 +1,7 @@
 export default interface SpriteModel {
     path: string;
     facing: string; // 'left' | 'right'
+    name: string;
 }
 
 export interface AnswerModel {

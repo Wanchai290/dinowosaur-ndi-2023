@@ -5,6 +5,7 @@ const dialogs: DialogModel[] = [
         id: 0,
         speaker: {
             path : "acc0",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "Le 7 décembre 2048 restera gravé dans les mémoires...",
@@ -17,6 +18,7 @@ const dialogs: DialogModel[] = [
         id: 2,
         speaker: {
             path : "acc1",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "Non pas car l’ail phone 42XS MAX à été annoncé par la firme connu de tous.",
@@ -29,6 +31,7 @@ const dialogs: DialogModel[] = [
         id: 3,
         speaker: {
             path : "acc0",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "Mais car ce jour là fut le début d'une nouvelle ère pour le climat de notre planète...",
@@ -41,6 +44,7 @@ const dialogs: DialogModel[] = [
         id: 4,
         speaker: {
             path : "acc0",
+            name: "Mr. le juge",
             facing: "right",
         },
         text: "Mme. Greenfield, j’ai été mis au courant que cette affaire était votre troisième.",
@@ -53,18 +57,58 @@ const dialogs: DialogModel[] = [
         id: 5,
         speaker: {
             path : "acc0",
+            name: "Mr. le juge",
             facing: "right",
         },
-        text: "Êtes-vous sûre d’être prête pour ce débat ?",
+        text: "Êtes-vous sûre d’être prête pour ce débat ? (flèche haut, bas pour choisir et flèche droite pour valider)",
+        forceAnswer: true,
+        canBeAnswered: true,
+        answers: [
+            {
+                text: "Oui, monsieur le juge.",
+                continue: 6,
+                weight: 1,
+            },
+            {
+                text: "Non, monsieur le juge.",
+                continue: 5001,
+                weight: 0,
+            }
+        ],
+        continue: 5,
+    },
+    {
+        id: 5001,
+        speaker: {
+            path : "acc0",
+            name: "Luna Greenfield",
+            facing: "right",
+        },
+        text: "Non monsieur le juge.",
         forceAnswer: false,
         canBeAnswered: true,
         answers: [],
-        continue: 6,
+        continue: 5002,
+    },
+    {
+        id: 5002,
+        speaker: {
+            path : "acc0",
+            name: "Mr. le juge",
+            facing: "right",
+        },
+        text: "Vous n'avez pas vraiment le choix",
+        forceAnswer: false,
+        canBeAnswered: true,
+        answers: [
+        ],
+        continue: 5,
     },
     {
         id: 6,
         speaker: {
             path : "acc0",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "Oui, monsieur le juge.",
@@ -72,10 +116,12 @@ const dialogs: DialogModel[] = [
         canBeAnswered: true,
         answers: [],
         continue: 7,
-    },{
+    },
+    {
         id: 7,
         speaker: {
             path : "acc0",
+            name: "Mr. le juge",
             facing: "right",
         },
         text: "Monsieur Shades, la défense est-elle prête ?",
@@ -88,6 +134,7 @@ const dialogs: DialogModel[] = [
         id: 8,
         speaker: {
             path : "def0",
+            name: "Dorian Shade",
             facing: "left",
         },
         text: "Toujours, monsieur le juge.",
@@ -100,6 +147,7 @@ const dialogs: DialogModel[] = [
         id: 9,
         speaker: {
             path : "def0",
+            name: "Mr. le juge",
             facing: "left",
         },
         text: "Bien ! Je déclare donc le débat ouvert !",
@@ -112,6 +160,7 @@ const dialogs: DialogModel[] = [
         id: 10,
         speaker: {
             path : "def0",
+            name: "Dorian Shade",
             facing: "left",
         },
         text: "Mme. Greenfield. Vous avez demandé cette audience à cause des modifications climatiques que subit le monde depuis ces dernières années.",
@@ -124,6 +173,7 @@ const dialogs: DialogModel[] = [
         id: 11,
         speaker: {
             path : "def1",
+            name: "Dorian Shade",
             facing: "left",
         },
         text: "Hors, rien n’a jamais prouvé que l’homme a un impact direct sur l’origine de ces anomalies.",
@@ -136,6 +186,7 @@ const dialogs: DialogModel[] = [
         id: 12,
         speaker: {
             path : "acc0",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "... (Je ne sais pas quoi répondre à cela…)",
@@ -148,6 +199,7 @@ const dialogs: DialogModel[] = [
         id: 13,
         speaker: {
             path : "tomm",
+            name: "Tomette Fourdansldos",
             facing: "right",
         },
         text: "Luna, je sais que c’est ton troisième débat dans ce travail, alors laisse-moi t’aider quelques instants !",
@@ -160,6 +212,7 @@ const dialogs: DialogModel[] = [
         id: 14,
         speaker: {
             path : "tomm",
+            name: "Tomette Fourdansldos",
             facing: "right",
         },
         text: "Tu as une liste de points ici te permettant de répondre au mensonge, aux allégations, ou d’améliorer son point de vue pour qu’il tende de ton côté. Réfléchis bien avant de répondre.",
@@ -167,23 +220,67 @@ const dialogs: DialogModel[] = [
         canBeAnswered: true,
         answers: [],
         continue: 15,
-    }, // TODO
+    },
     {
         id: 15,
         speaker: {
             path : "acc0",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "(Effectivement, Tomette a raison. Je dois choisir mes mots avec soin.",
+        forceAnswer: true,
+        canBeAnswered: true,
+        answers: [
+            {
+                text: "Parler des études scientifiques.",
+                continue: 16,
+                weight: 1,
+            },
+            {
+                text: "Parler de l’augmentation de GES des activités humaines.",
+                continue: 16,
+                weight: 1,
+            },
+            {
+                text: "Parler des besoins humains.",
+                continue: 15001,
+                weight: 0,
+            },
+        ],
+        continue: 15,
+    },
+    {
+        id: 15001,
+        speaker: {
+            path : "acc0",
+            name: "Luna Greenfield",
+            facing: "right",
+        },
+        text: "Monsieur Shade, il s’agit d’un besoin humain pour l’homme de libérer le climat du réchauffement climatique !",
         forceAnswer: false,
-        canBeAnswered: false,
+        canBeAnswered: true,
         answers: [],
-        continue: 16,
+        continue: 15002,
+    },
+    {
+        id: 15002,
+        speaker: {
+            path : "def0",
+            name: "Dorian Shade",
+            facing: "right",
+        },
+        text: "Quand bien même auriez-vous raison, je ne vois pas très bien en quoi cela répond à ma question !",
+        forceAnswer: false,
+        canBeAnswered: true,
+        answers: [],
+        continue: 21,
     },
     {
         id: 16,
         speaker: {
             path : "acc0",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "Mon but est de convaincre, pas de simplement contrer ses arguments. Concentrons-nous sur les faits.)",
@@ -196,6 +293,7 @@ const dialogs: DialogModel[] = [
         id: 18,
         speaker: {
             path : "acc0",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "Monsieur Shade, je comprends vos préoccupations, mais de nombreuses études scientifiques convergent vers une conclusion alarmante.",
@@ -208,6 +306,7 @@ const dialogs: DialogModel[] = [
         id: 19,
         speaker: {
             path : "acc0",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "Les émissions de gaz à effet de serre provenant des activités humaines ont augmenté de manière significative, contribuant ainsi au changement climatique.",
@@ -220,6 +319,7 @@ const dialogs: DialogModel[] = [
         id: 20,
         speaker: {
             path : "acc1",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "Nous avons la responsabilité de prendre des mesures pour atténuer ces effets néfastes.",
@@ -232,6 +332,7 @@ const dialogs: DialogModel[] = [
         id: 21,
         speaker: {
             path : "def0",
+            name: "Dorian Shade",
             facing: "left",
         },
         text: "Les scientifiques ont souvent des opinions divergentes.",
@@ -244,6 +345,7 @@ const dialogs: DialogModel[] = [
         id: 23,
         speaker: {
             path : "def1",
+            name: "Dorian Shade",
             facing: "left",
         },
         text: "Certains affirment que le changement climatique est principalement dû à des causes naturelles.",
@@ -256,6 +358,7 @@ const dialogs: DialogModel[] = [
         id: 24,
         speaker: {
             path : "acc0",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "(Dois-je contrer ses arguments ou souligner la prédominance des preuves en faveur de l'activité humaine?)",
@@ -268,6 +371,7 @@ const dialogs: DialogModel[] = [
         id: 25,
         speaker: {
             path : "tomm",
+            name: "Tomette Fourdansldos",
             facing: "right",
         },
         text: "Luna, tu peux mentionner le consensus scientifique qui penche en faveur de l'influence humaine.",
@@ -280,6 +384,7 @@ const dialogs: DialogModel[] = [
         id: 26,
         speaker: {
             path : "tomm",
+            name: "Tomette Fourdansldos",
             facing: "right",
         },
         text: "Cela renforce ton argument de manière crédible.",
@@ -292,6 +397,7 @@ const dialogs: DialogModel[] = [
         id: 27,
         speaker: {
             path : "acc0",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "Monsieur Shade, bien que certains scientifiques puissent avoir des opinions divergentes,",
@@ -304,6 +410,7 @@ const dialogs: DialogModel[] = [
         id: 28,
         speaker: {
             path : "acc1",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "la grande majorité s'accorde sur le rôle significatif des activités humaines dans le changement climatique.",
@@ -316,6 +423,7 @@ const dialogs: DialogModel[] = [
         id: 29,
         speaker: {
             path : "acc0",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "Un consensus scientifique émerge de multiples études, et nous ne pouvons pas ignorer ces avertissements.",
@@ -328,6 +436,7 @@ const dialogs: DialogModel[] = [
         id: 30,
         speaker: {
             path : "def0",
+            name: "Dorian Shade",
             facing: "left",
         },
         text: "Peut-être, mais ces mêmes scientifiques ont-ils des solutions pratiques pour préserver notre économie",
@@ -340,6 +449,7 @@ const dialogs: DialogModel[] = [
         id: 31,
         speaker: {
             path : "def1",
+            name: "Dorian Shade",
             facing: "left",
         },
         text: "tout en luttant contre le changement climatique?",
@@ -352,6 +462,7 @@ const dialogs: DialogModel[] = [
         id: 32,
         speaker: {
             path : "acc0",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "(Il a un point. Dois-je présenter des solutions ou souligner que des innovations sont possibles?)",
@@ -364,18 +475,57 @@ const dialogs: DialogModel[] = [
         id: 33,
         speaker: {
             path : "tomm",
+            name: "Tomette Fourdansldos",
             facing: "right",
         },
         text: "Luna, enfin ! Mets en avant les innovations et les solutions qui existent. Cela montrera que tu es ouverte aux alternatives.",
+        forceAnswer: true,
+        canBeAnswered: true,
+        answers: [
+            {
+                "text": "Suivre les conseils de Tomette.",
+                continue: 33001,
+                weight: 1,
+            },
+            {
+                "text": "S’engager dans le soutien de la fission nucléaire",
+                continue: 34,
+                weight: 1,
+            }
+        ],
+        continue: 33,
+    },
+    {
+        id: 33001,
+        speaker: {
+            path : "acc0",
+            name: "Luna Greenfield",
+            facing: "right",
+        },
+        text: "Monsieur Shade, il est vrai que des solutions innovantes émergent, telles que l’énergie de fission nucléaire et -",
         forceAnswer: false,
         canBeAnswered: false,
         answers: [],
-        continue: 34,
+        continue: 33002,
+    },
+    {
+        id: 33002,
+        speaker: {
+            path : "acc0",
+            name: "Luna Greenfield",
+            facing: "right",
+        },
+        text: "Je ne suis pas sûr que la fission nucléaire soit une solution “innovante”, Mme Greenfield…",
+        forceAnswer: false,
+        canBeAnswered: false,
+        answers: [],
+        continue: 36,
     },
     {
         id: 34,
         speaker: {
             path : "acc0",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "Monsieur Shade, il est vrai que des solutions innovantes émergent, telles que les énergies renouvelables et les pratiques durables.",
@@ -388,6 +538,7 @@ const dialogs: DialogModel[] = [
         id: 35,
         speaker: {
             path : "acc1",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "En investissant dans ces technologies, nous pouvons non seulement préserver notre économie mais aussi construire un avenir plus durable pour tous.",
@@ -400,6 +551,7 @@ const dialogs: DialogModel[] = [
         id: 36,
         speaker: {
             path : "acc0",
+            name: "Mr. le juge",
             facing: "right",
         },
         text: "Vos arguments sont notés. Mme. Fourdansldos, je vous prierai de ne plus orienter le porte-paroles de votre camp, n’y même celui du camp adverse, ou des sanctions seront appliquées.",
@@ -412,6 +564,7 @@ const dialogs: DialogModel[] = [
         id: 37,
         speaker: {
             path : "acc0",
+            name: "Mr. le juge",
             facing: "right",
         },
         text: "N’oubliez pas que le tribunal est un lieu d’ordre et de vérité où l’accusation et la défense doivent pouvoir dialoguer à égalité. Ceci étant dit, veuillez maintenant continuer ce débat, Mr. Shade.",
@@ -424,6 +577,7 @@ const dialogs: DialogModel[] = [
         id: 38,
         speaker: {
             path : "def0",
+            name: "Dorian Shade",
             facing: "left",
         },
         text: "Je vous remercie, votre Honneur. Vous déclarez que les énergies renouvelables et des pratiques durables permettraient de maintenir un avenir plus durable pour nous.",
@@ -436,6 +590,7 @@ const dialogs: DialogModel[] = [
         id: 39,
         speaker: {
             path : "def1",
+            name: "Dorian Shade",
             facing: "left",
         },
         text: "Cependant, ce n’est pas le fait d’installer des panneaux solaires coûteux qui va me permettre de gagner et de me nourrir à la fin du mois. Durable pour qui, alors ?",
@@ -448,18 +603,120 @@ const dialogs: DialogModel[] = [
         id: 40,
         speaker: {
             path : "acc0",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "(C’est ce sur quoi j’ai travaillé hier avec Tomette… Si je me rappelle bien…)",
         forceAnswer: false,
         canBeAnswered: false,
+        answers: [
+            {
+                text: "Parler de l’investissement dans les énergies renouvelables.",
+                continue: 41,
+                weight: 1,
+            },
+            {
+                text: "Parler de la participation de chacun.",
+                continue: 41,
+                weight: 1,
+            },
+            {
+                text: "Parler des moeurs et politiques qui doivent inclure le climat.",
+                continue: 41,
+                weight: 1,
+            },
+            {
+                text: "Parler des batteries rechargeables.",
+                continue: 40001,
+                weight: 1,
+            },
+            
+        ],
+        continue: 40,
+    },
+    {
+        id: 40001,
+        speaker: {
+            path : "acc0",
+            name: "Luna Greenfield",
+            facing: "right",
+        },
+        text: "Mr. Shade, vous avez raison, cela ne vous fera pas gagner directement de l’argent,",
+        forceAnswer: false,
+        canBeAnswered: true,
         answers: [],
-        continue: 41,
+        continue: 40002,
+    },
+    {
+        id: 40002,
+        speaker: {
+            path : "acc0",
+            name: "Luna Greenfield",
+            facing: "right",
+        },
+        text: "et tout le monde n’a pas forcément accès à ces installations.",
+        forceAnswer: false,
+        canBeAnswered: true,
+        answers: [],
+        continue: 40003,
+    },
+    {
+        id: 40003,
+        speaker: {
+            path : "acc0",
+            name: "Luna Greenfield",
+            facing: "right",
+        },
+        text: "Cependant, des solutions telles que des batteries rechargeables permettent le stockage et le transfert de l’énergie.",
+        forceAnswer: false,
+        canBeAnswered: true,
+        answers: [],
+        continue: 40004,
+    },
+    {
+        id: 40004,
+        speaker: {
+            path : "def0",
+            name: "Dorian Shade",
+            facing: "right",
+        },
+        text: "Mme. Greenfield, êtes-vous au courant que les batteries utilisent des matériaux rares,",
+        forceAnswer: false,
+        canBeAnswered: true,
+        answers: [],
+        continue: 40005,
+    },
+    {
+        id: 40005,
+        speaker: {
+            path : "def0",
+            name: "Dorian Shade",
+            facing: "right",
+        },
+        text: "et que l’énergie n’est pas vraiment stockée dans le cas de piles ?",
+        forceAnswer: false,
+        canBeAnswered: true,
+        answers: [],
+        continue: 40006,
+    },
+    {
+        id: 40006,
+        speaker: {
+            path : "def0",
+            name: "Dorian Shade",
+            facing: "right",
+        },
+        text: "De plus, ces installations se fatiguent rapidement...",
+        forceAnswer: false,
+        canBeAnswered: true,
+        answers: [],
+        continue: 441,
     },
     {
         id: 41,
         speaker: {
             path : "acc0",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "Mr. Shade, vous avez raison, cela ne vous fera pas gagner directement de l’argent,",
@@ -472,6 +729,7 @@ const dialogs: DialogModel[] = [
         id: 42,
         speaker: {
             path : "acc0",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "et tout le monde n’est pas capable d’investir dans de telles installations.",
@@ -484,6 +742,7 @@ const dialogs: DialogModel[] = [
         id: 43,
         speaker: {
             path : "acc1",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "Cependant, chacun devrait participer à son échelle pour pouvoir faire avancer les choses, d’un simple évier arrêté à des installations.",
@@ -496,6 +755,7 @@ const dialogs: DialogModel[] = [
         id: 44,
         speaker: {
             path : "acc0",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "Malheureusement, il convient plutôt de modifier les politiques et les mœurs afin d’inclure le climat dans nos considérations.",
@@ -508,6 +768,7 @@ const dialogs: DialogModel[] = [
         id: 441,
         speaker: {
             path : "def0",
+            name: "Dorian Shade",
             facing: "left",
         },
         text: "Mais, Mme. Greenfield, selon les récents évènements, de plus en plus d’espèces s’adaptent aux “nouveaux” environnements :",
@@ -520,6 +781,7 @@ const dialogs: DialogModel[] = [
         id: 45,
         speaker: {
             path : "def0",
+            name: "Dorian Shade",
             facing: "left",
         },
         text: "Il n’y a donc aucun besoin pour l’humain de s’adapter, étant donné que nous sommes déjà entièrement capable de créer des outils.",
@@ -532,6 +794,7 @@ const dialogs: DialogModel[] = [
         id: 46,
         speaker: {
             path : "def1",
+            name: "Dorian Shade",
             facing: "left",
         },
         text: "Nous sommes même capables de la fusion atomique, depuis quelques années !",
@@ -544,6 +807,7 @@ const dialogs: DialogModel[] = [
         id: 47,
         speaker: {
             path : "acc0",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "Bien que ces espèces s’adaptent aux nouveaux environnements, cela ne veut pas dire que toutes les espèces en sont capables ; bien loin de là.",
@@ -556,6 +820,7 @@ const dialogs: DialogModel[] = [
         id: 48,
         speaker: {
             path : "acc0",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "(Il me semblait avoir des papiers sur ça… ah, là !)",
@@ -568,6 +833,7 @@ const dialogs: DialogModel[] = [
         id: 49,
         speaker: {
             path : "acc0",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "Regardez ce document : Il fait état de blanchissement des récifs coralliens à proximité de nos côtes depuis maintenant au moins 40 ans.",
@@ -580,6 +846,7 @@ const dialogs: DialogModel[] = [
         id: 50,
         speaker: {
             path : "acc1",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "Or, ces mêmes coraux permettent à des espèces de se nourrir, voire même de vivre, en se cachant dedans !",
@@ -592,6 +859,7 @@ const dialogs: DialogModel[] = [
         id: 51,
         speaker: {
             path : "acc0",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "L’adaptation est justement la clé ; et dans le cas de l’humain, c’est l’innovation.",
@@ -604,6 +872,7 @@ const dialogs: DialogModel[] = [
         id: 52,
         speaker: {
             path : "def1",
+            name: "Dorian Shade",
             facing: "left",
         },
         text: "Enfin, ceci fait partie du cycle naturel !",
@@ -616,6 +885,7 @@ const dialogs: DialogModel[] = [
         id: 53,
         speaker: {
             path : "def0",
+            name: "Dorian Shade",
             facing: "left",
         },
         text: "Après tout, les environnements de la Terre ont changé tout au long de son histoire,",
@@ -628,6 +898,7 @@ const dialogs: DialogModel[] = [
         id: 54,
         speaker: {
             path : "def0",
+            name: "Dorian Shade",
             facing: "left",
         },
         text: "avec des espèces qui disparaissent, et d’autres qui apparaissent.",
@@ -640,6 +911,7 @@ const dialogs: DialogModel[] = [
         id: 55,
         speaker: {
             path : "def0",
+            name: "Dorian Shade",
             facing: "left",
         },
         text: "C’est un cycle naturel, et vous nous dîtes que les activités humaines en seraient la cause ?",
@@ -652,6 +924,7 @@ const dialogs: DialogModel[] = [
         id: 56,
         speaker: {
             path : "def1",
+            name: "Dorian Shade",
             facing: "left",
         },
         text: "N’est-ce pas hors de propos ?",
@@ -664,6 +937,7 @@ const dialogs: DialogModel[] = [
         id: 57,
         speaker: {
             path : "acc1",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "Non, Mr. Shade. Bien au contraire, et nous revenons même au début de notre débat. Vous vous répétez !",
@@ -676,6 +950,7 @@ const dialogs: DialogModel[] = [
         id: 58,
         speaker: {
             path : "acc0",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "Votre tête me dit que vous vous rappelez de ce que nous avions parlé : les scientifiques pensent en grande majorité que l’origine est humaine.",
@@ -688,6 +963,7 @@ const dialogs: DialogModel[] = [
         id: 59,
         speaker: {
             path : "acc1",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "Quant au cycle naturel, est-ce donc naturel d’avoir une forte hausse d’incendies, de tsunamis, et même de toxicité, notamment sur les récifs ?",
@@ -700,6 +976,7 @@ const dialogs: DialogModel[] = [
         id: 60,
         speaker: {
             path : "def0",
+            name: "Dorian Shade",
             facing: "left",
         },
         text: "Il est de toute façon trop tard pour l’humain d’inverser ce cycle; après tout, la machine est déjà en marche.",
@@ -712,6 +989,7 @@ const dialogs: DialogModel[] = [
         id: 61,
         speaker: {
             path : "def1",
+            name: "Dorian Shade",
             facing: "left",
         },
         text: "Si c’est juste un problème de particules, alors dîtes-moi pourquoi l’humain ne pourrait pas juste fabriquer une machine permettant d’inverser cette tendance.",
@@ -724,6 +1002,7 @@ const dialogs: DialogModel[] = [
         id: 62,
         speaker: {
             path : "acc0",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "Tout simplement car ce n’est pas possible à une échelle mondiale; malgré les tentatives de l’entreprise Carboneo depuis de nombreuses années.",
@@ -736,6 +1015,7 @@ const dialogs: DialogModel[] = [
         id: 63,
         speaker: {
             path : "acc0",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "Après, il est compliqué de capter l’entièreté du CO2 produit. Mais il n’est jamais trop tard pour inverser le cycle; seulement, ce ne sera ni notre génération, ni la prochaine qui en bénéficierait, mais encore d’autres.",
@@ -748,6 +1028,7 @@ const dialogs: DialogModel[] = [
         id: 64,
         speaker: {
             path : "tomm",
+            name: "Tomette Fourdansldos",
             facing: "right",
         },
         text: "Tomette (Chuchote): *Bien joué, Luna ! Le juge a l’air satisfait !*",
@@ -760,6 +1041,7 @@ const dialogs: DialogModel[] = [
         id: 65,
         speaker: {
             path : "tomm",
+            name: "Mr. le juge",
             facing: "right",
         },
         text: "Nous arrivons à la fin de ce débat, il me semble. N’est-ce pas, Mr. Shade ?",
@@ -772,6 +1054,7 @@ const dialogs: DialogModel[] = [
         id: 66,
         speaker: {
             path : "def0",
+            name: "Dorian Shade",
             facing: "left",
         },
         text: "O-oui, votre Honneur. Je le pense aussi.",
@@ -784,6 +1067,7 @@ const dialogs: DialogModel[] = [
         id: 67,
         speaker: {
             path : "def0",
+            name: "Mr. le juge",
             facing: "left",
         },
         text: "Mme Greenfield, je dois dire, vous vous êtes améliorée depuis vos deux premiers débats. Il semblerait que ce soit vous qui tenez raison, cette fois-ci.",
@@ -796,6 +1080,7 @@ const dialogs: DialogModel[] = [
         id: 68,
         speaker: {
             path : "acc0",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "Je vous remercie, votre Honneur ! Mais cela n’aurait pas été possible sans les conseils de ma chère Tomette.",
@@ -808,6 +1093,7 @@ const dialogs: DialogModel[] = [
         id: 69,
         speaker: {
             path : "tomm",
+            name: "Tomette Fourdansldos",
             facing: "right",
         },
         text: "Hé hé!",
@@ -820,6 +1106,7 @@ const dialogs: DialogModel[] = [
         id: 70,
         speaker: {
             path : "acc0",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "Mais enfin, Mr. Shade, vous…",
@@ -832,6 +1119,7 @@ const dialogs: DialogModel[] = [
         id: 71,
         speaker: {
             path : "acc0",
+            name: "Mr. le juge",
             facing: "right",
         },
         text: "*raclement de gorge* Mme. Greenfield, il me semble que nous arrivons aux termes de ce débat. N’est-ce pas ?",
@@ -844,6 +1132,7 @@ const dialogs: DialogModel[] = [
         id: 72,
         speaker: {
             path : "acc0",
+            name: "Luna Greenfield",
             facing: "right",
         },
         text: "Votre Honneur, je… !",
@@ -856,6 +1145,7 @@ const dialogs: DialogModel[] = [
         id: 73,
         speaker: {
             path : "acc0",
+            name: "Mr. le juge",
             facing: "right",
         },
         text: "Mme. Greenfield, malgré mon respect envers vous, vous n’avez pas performé correctement aujourd’hui contre Mr. Shade. Je dois avouer que je suis assez déçu, vos deux premiers débats étaient bien plus intéressants.",
@@ -868,6 +1158,7 @@ const dialogs: DialogModel[] = [
         id: 74,
         speaker: {
             path : "def0",
+            name: "Dorian Shade",
             facing: "left",
         },
         text: "L’accusation ne semblait pas bien prête, cette fois-ci.",
@@ -880,6 +1171,7 @@ const dialogs: DialogModel[] = [
         id: 75,
         speaker: {
             path : "tomm",
+            name: "Tomette Fourdansldos",
             facing: "right",
         },
         text: "La prochaine fois, on l’aura, ne t’inquiètes pas !",

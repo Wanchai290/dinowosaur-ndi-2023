@@ -57,16 +57,31 @@ function render(dialogs: DialogDebate, answerSet: number, game: KaboomCtx): Game
         game.anchor("center"),
         // game.color(1, 1, 1),
     ]));
+    allLoopSprites.push(game.add([
+        game.rect(game.width() / 6, game.height() / 12),
+        game.pos(20, 20),
+        game.anchor("topleft"),
+        game.color(0, 0, 0),
+    ]));
+    allLoopSprites.push(game.add([
+        game.text(speaker.name, {
+            size: 25,
+            font: "sans-serif",
+        }),
+        game.pos(20 + game.width() / 12, 20 + game.height() / 24),
+        game.anchor("center"),
+        // game.color(1, 1, 1),
+    ]));
     if (answers.length > 0 && dialog.canBeAnswered) {
         allLoopSprites.push(game.add([
-            game.rect(game.width() / 8, game.height() / 4),
-            game.pos(game.width() - game.width() / 16, game.height() / 2),
+            game.rect(game.width() / 6, game.height() / 4),
+            game.pos(game.width() - game.width() / 12, game.height() / 2),
             game.anchor("center"),
             game.color(0, 0, 0),
         ]));
         allLoopSprites.push(game.add([
-            game.rect(game.width() / 8, 32),
-            game.pos(game.width() - game.width() / 16, game.height() / 2),
+            game.rect(game.width() / 6, 32),
+            game.pos(game.width() - game.width() / 12, game.height() / 2),
             game.anchor("center"),
             game.color(122, 122, 122),
         ]));
@@ -75,10 +90,10 @@ function render(dialogs: DialogDebate, answerSet: number, game: KaboomCtx): Game
                 allLoopSprites.push(game.add([
                     game.text(answers[i].text, {
                         size: 24,
-                        width: game.width() / 8 - 10,
+                        width: game.width() / 6 - 10,
                         font: "sans-serif",
                     }),
-                    game.pos(game.width() - game.width() / 16, game.height() / 2 + 32 * (i - answerSet)),
+                    game.pos(game.width() - game.width() / 12, game.height() / 2 + 32 * (i - answerSet)),
                     game.anchor("center"),
                     // game.color(1, 1, 1),
                 ]));
@@ -108,12 +123,19 @@ export default function debate(canvasref: HTMLCanvasElement, dialogs: DialogDeba
     const def0 = game.loadSprite("def0" , assetRoot + "sprite_lawyer_defense_0.png");
     const def1 = game.loadSprite("def1" , assetRoot + "sprite_lawyer_defense_1.png");
     const tomm = game.loadSprite("tomm" , assetRoot + "sprite_lawyer_tomette.png");
-    
+   
+    const backSize = {
+        width: 1000,
+        height: 563,
+    };
     game.add([
         game.sprite("back"),
         game.pos(game.width() / 2, game.height() / 2),
         game.anchor("center"),
-        game.scale(game.width(), game.height()),
+        game.scale(
+            (game.width() / backSize.width),
+            (game.height() / backSize.height),
+        ),
     ]);
 
 
@@ -152,8 +174,11 @@ export default function debate(canvasref: HTMLCanvasElement, dialogs: DialogDeba
     });
 
     game.onKeyPress("right", () => {
-        dialogs.nextDialogAnswer(dialogs.getAnswers()[currentSetAnswer]);
-        beforeRender();
+        if (currentSetAnswer <= dialogs.getAnswers().length - 1) {
+            dialogs.nextDialogAnswer(dialogs.getAnswers()[currentSetAnswer]);
+            currentSetAnswer = 0;
+            beforeRender();
+        }
     });
 
     beforeRender();
