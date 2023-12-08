@@ -43,7 +43,7 @@ export default function Home() {
                 id: 1,
                 speaker: {
                     path: "acc1",
-                    facing: "left",
+                    facing: "right",
                 },
                 text: "SO YOU FLOP !",
                 forceAnswer: false,
