@@ -19,7 +19,7 @@ export default function Home() {
                 },
                 text: "I'm the prosecutor.",
                 forceAnswer: false,
-                canBeAnswered: true,
+                canBeAnswered: false,
                 answers: [
                     {
                         text: "I'm the defendant.",
@@ -37,19 +37,19 @@ export default function Home() {
                         weight: 1,
                     },
                 ],
-                continue: 1,
+                continue: 2,
             },
             {
                 id: 1,
                 speaker: {
-                    path: "acc1",
+                    path: "acc0",
                     facing: "right",
                 },
                 text: "SO YOU FLOP !",
                 forceAnswer: false,
                 canBeAnswered: false,
                 answers: [],
-                continue: 0,
+                continue: 2,
             }
         ]);
         const game = debate(canvasRef.current, dialogs);
