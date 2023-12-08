@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from "react";
+import { KeyboardEvent, useEffect, useState } from "react";
 
 import DialogBox from "./DialogBox";
 
@@ -22,10 +22,10 @@ interface Props {
 	baseX: number;
 	baseY: number;
 	sprite: string;
-	dialogSetter: Function;
-	dialogId:number;
-	dialogIdSetter: Function;
-	map: number;
+	dialogSetter: Function|null;
+	dialogId:number|null;
+	dialogIdSetter: Function|null;
+	map: number|null;
 
 }
 
@@ -46,7 +46,7 @@ const mapCoord = [
   ]
 ]
 
-export default function NPCComponent({isPlayer, baseX, baseY, sprite, dialogSetter, dialogId, dialogIdSetter, map}: Props) {
+export default function NPCComponent({isPlayer, baseX, baseY, sprite, dialogSetter, dialogId = null, dialogIdSetter = null, map = null}: Props) {
 	
   const [mapleftOffset, setleftOffset] = useState<number>(baseX);
   const [maptopOffset, settopOffset] = useState<number>(baseY);
@@ -64,8 +64,10 @@ export default function NPCComponent({isPlayer, baseX, baseY, sprite, dialogSett
 
 
   function nextDialog() {
-    let nextDialogId = dialogId + 1;
-    let npc = mapCoord[map].filter(npc => {
+    if (dialogIdSetter === null || dialogSetter === null) return;
+    if (dialogId === null) return;
+    let nextDialogId = (dialogId) + 1;
+    let npc = mapCoord[map ? map : 0].filter(npc => {
       return Math.abs(npc.x - mapleftOffset) < 10 && Math.abs(npc.y - maptopOffset) < 10;
     })[0];
     console.log(npc);
@@ -84,7 +86,7 @@ export default function NPCComponent({isPlayer, baseX, baseY, sprite, dialogSett
   }
 
 
-  const keyDownHandler = (e: KeyboardEvent) => {
+  const keyDownHandler = (e: KeyboardEvent<Element>) => {
 	  let leftOffset = mapleftOffset;
 	  let topOffset = maptopOffset;
 	  let sprite = Direction.UP;
@@ -110,6 +112,7 @@ export default function NPCComponent({isPlayer, baseX, baseY, sprite, dialogSett
 		  break;
     }
 
+    if (!dialogId) return;
     if(dialogId <= 0) {
       setOffset(leftOffset, topOffset);
       handleDirectionPlayerSprite(sprite);

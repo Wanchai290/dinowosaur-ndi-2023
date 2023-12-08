@@ -6,7 +6,7 @@ import { DialogDebate } from "./models/debate.model";
 
 
 export default function Home() {
-	const canvasRef = React.useRef<HTMLCanvasElement>();
+	const canvasRef = React.useRef<HTMLCanvasElement>(null);
     React.useEffect(() => {
         if (!canvasRef.current) return;
         let dialogs = new DialogDebate(Dialogs);
