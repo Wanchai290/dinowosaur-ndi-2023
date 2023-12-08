@@ -97,7 +97,7 @@ const dialogs: DialogModel[] = [
             name: "Mr. le juge",
             facing: "right",
         },
-        text: "Vous n'avez pas vraiment le choix",
+        text: "Vous n'avez pas vraiment le choix !",
         forceAnswer: false,
         canBeAnswered: true,
         answers: [
@@ -268,7 +268,7 @@ const dialogs: DialogModel[] = [
         speaker: {
             path : "def0",
             name: "Dorian Shade",
-            facing: "right",
+            facing: "left",
         },
         text: "Quand bien même auriez-vous raison, je ne vois pas très bien en quoi cela répond à ma question !",
         forceAnswer: false,
@@ -608,7 +608,7 @@ const dialogs: DialogModel[] = [
         },
         text: "(C’est ce sur quoi j’ai travaillé hier avec Tomette… Si je me rappelle bien…)",
         forceAnswer: false,
-        canBeAnswered: false,
+        canBeAnswered: true,
         answers: [
             {
                 text: "Parler de l’investissement dans les énergies renouvelables.",
@@ -678,7 +678,7 @@ const dialogs: DialogModel[] = [
         speaker: {
             path : "def0",
             name: "Dorian Shade",
-            facing: "right",
+            facing: "left",
         },
         text: "Mme. Greenfield, êtes-vous au courant que les batteries utilisent des matériaux rares,",
         forceAnswer: false,
@@ -691,7 +691,7 @@ const dialogs: DialogModel[] = [
         speaker: {
             path : "def0",
             name: "Dorian Shade",
-            facing: "right",
+            facing: "left",
         },
         text: "et que l’énergie n’est pas vraiment stockée dans le cas de piles ?",
         forceAnswer: false,
@@ -704,7 +704,7 @@ const dialogs: DialogModel[] = [
         speaker: {
             path : "def0",
             name: "Dorian Shade",
-            facing: "right",
+            facing: "left",
         },
         text: "De plus, ces installations se fatiguent rapidement...",
         forceAnswer: false,
