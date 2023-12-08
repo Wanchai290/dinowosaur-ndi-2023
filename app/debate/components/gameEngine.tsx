@@ -106,7 +106,7 @@ export default function debate(canvasref: HTMLCanvasElement, dialogs: DialogDeba
     const acc0 = game.loadSprite("acc0" , assetRoot + "sprite_lawyer_accusation_0.png");
     const acc1 = game.loadSprite("acc1" , assetRoot + "sprite_lawyer_accusation_1.png");
     const def0 = game.loadSprite("def0" , assetRoot + "sprite_lawyer_defense_0.png");
-    const def1 = game.loadSprite("acc1" , assetRoot + "sprite_lawyer_defense_1.png");
+    const def1 = game.loadSprite("def1" , assetRoot + "sprite_lawyer_defense_1.png");
     const tomm = game.loadSprite("tomm" , assetRoot + "sprite_lawyer_tomette.png");
     
     game.add([

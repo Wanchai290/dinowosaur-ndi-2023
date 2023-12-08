@@ -1,9 +1,12 @@
 import { DialogModel } from "../models/debate.model";
-
+const assetRoot = "debate/assets/"
 const dialogs: DialogModel[] = [
     {
         id: 1,
-        speaker: { /* SpriteModel pour Luna */ },
+        speaker: {
+            path : "acc0",
+            facing: "right",
+        },
         text: "Le 7 décembre 2048 restera gravé dans les mémoires...",
         forceAnswer: false,
         canBeAnswered: true,
@@ -12,7 +15,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 2,
-        speaker: { /* SpriteModel pour Luna */ },
+        speaker: {
+            path : "acc1",
+            facing: "right",
+        },
         text: "Non pas car l’ail phone 42XS MAX à été annoncé par la firme connu de tous.",
         forceAnswer: false,
         canBeAnswered: true,
@@ -21,7 +27,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 3,
-        speaker: { /* SpriteModel pour Luna */ },
+        speaker: {
+            path : "acc0",
+            facing: "right",
+        },
         text: "Mais car ce jour là fut le début d'une nouvelle ère pour le climat de notre planète...",
         forceAnswer: false,
         canBeAnswered: true,
@@ -30,7 +39,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 4,
-        speaker: { /* SpriteModel pour Juge */ },
+        speaker: {
+            path : "acc0",
+            facing: "right",
+        },
         text: "Mme. Greenfield, j’ai été mis au courant que cette affaire était votre troisième.",
         forceAnswer: false,
         canBeAnswered: true,
@@ -39,7 +51,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 5,
-        speaker: { /* SpriteModel pour Juge */ },
+        speaker: {
+            path : "acc0",
+            facing: "right",
+        },
         text: "Êtes-vous sûre d’être prête pour ce débat ?",
         forceAnswer: false,
         canBeAnswered: true,
@@ -48,7 +63,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 6,
-        speaker: { /* SpriteModel pour Luna */ },
+        speaker: {
+            path : "acc0",
+            facing: "right",
+        },
         text: "Oui, monsieur le juge.",
         forceAnswer: false,
         canBeAnswered: true,
@@ -56,7 +74,10 @@ const dialogs: DialogModel[] = [
         continue: 7,
     },{
         id: 7,
-        speaker: { /* SpriteModel pour Juge */ },
+        speaker: {
+            path : "acc0",
+            facing: "right",
+        },
         text: "Monsieur Shades, la défense est-elle prête ?",
         forceAnswer: false,
         canBeAnswered: true,
@@ -65,7 +86,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 8,
-        speaker: { /* SpriteModel pour Dorian */ },
+        speaker: {
+            path : "def0",
+            facing: "left",
+        },
         text: "Toujours, monsieur le juge.",
         forceAnswer: false,
         canBeAnswered: true,
@@ -74,7 +98,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 9,
-        speaker: { /* SpriteModel pour Juge */ },
+        speaker: {
+            path : "def0",
+            facing: "left",
+        },
         text: "Bien ! Je déclare donc le débat ouvert !",
         forceAnswer: false,
         canBeAnswered: false,
@@ -83,7 +110,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 10,
-        speaker: { /* SpriteModel pour Dorian */ },
+        speaker: {
+            path : "def0",
+            facing: "left",
+        },
         text: "Mme. Greenfield. Vous avez demandé cette audience à cause des modifications climatiques que subit le monde depuis ces dernières années.",
         forceAnswer: false,
         canBeAnswered: true,
@@ -92,7 +122,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 11,
-        speaker: { /* SpriteModel pour Juge */ },
+        speaker: {
+            path : "def1",
+            facing: "left",
+        },
         text: "Hors, rien n’a jamais prouvé que l’homme a un impact direct sur l’origine de ces anomalies.",
         forceAnswer: false,
         canBeAnswered: false,
@@ -101,7 +134,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 12,
-        speaker: { /* SpriteModel pour Luna */ },
+        speaker: {
+            path : "acc0",
+            facing: "right",
+        },
         text: "... (Je ne sais pas quoi répondre à cela…)",
         forceAnswer: false,
         canBeAnswered: true,
@@ -110,7 +146,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 13,
-        speaker: { /* SpriteModel pour Tomette */ },
+        speaker: {
+            path : "tomm",
+            facing: "right",
+        },
         text: "Luna, je sais que c’est ton troisième débat dans ce travail, alors laisse-moi t’aider quelques instants !",
         forceAnswer: false,
         canBeAnswered: true,
@@ -119,7 +158,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 14,
-        speaker: { /* SpriteModel pour Luna */ },
+        speaker: {
+            path : "tomm",
+            facing: "right",
+        },
         text: "Tu as une liste de points ici te permettant de répondre au mensonge, aux allégations, ou d’améliorer son point de vue pour qu’il tende de ton côté. Réfléchis bien avant de répondre.",
         forceAnswer: false,
         canBeAnswered: true,
@@ -128,7 +170,10 @@ const dialogs: DialogModel[] = [
     }, // TODO
     {
         id: 15,
-        speaker: { /* SpriteModel pour Luna (pensant) */ },
+        speaker: {
+            path : "acc0",
+            facing: "right",
+        },
         text: "(Effectivement, Tomette a raison. Je dois choisir mes mots avec soin.",
         forceAnswer: false,
         canBeAnswered: false,
@@ -137,16 +182,22 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 16,
-        speaker: { /* SpriteModel pour Luna */ },
+        speaker: {
+            path : "acc0",
+            facing: "right",
+        },
         text: "Mon but est de convaincre, pas de simplement contrer ses arguments. Concentrons-nous sur les faits.)",
         forceAnswer: false,
         canBeAnswered: true,
         answers: [],
-        continue: 17,
+        continue: 18,
     },
     {
         id: 18,
-        speaker: { /* SpriteModel pour Luna */ },
+        speaker: {
+            path : "acc0",
+            facing: "right",
+        },
         text: "Monsieur Shade, je comprends vos préoccupations, mais de nombreuses études scientifiques convergent vers une conclusion alarmante.",
         forceAnswer: false,
         canBeAnswered: true,
@@ -155,7 +206,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 19,
-        speaker: { /* SpriteModel pour Dorian */ },
+        speaker: {
+            path : "acc0",
+            facing: "right",
+        },
         text: "Les émissions de gaz à effet de serre provenant des activités humaines ont augmenté de manière significative, contribuant ainsi au changement climatique.",
         forceAnswer: false,
         canBeAnswered: true,
@@ -164,7 +218,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 20,
-        speaker: { /* SpriteModel pour Dorian */ },
+        speaker: {
+            path : "acc1",
+            facing: "right",
+        },
         text: "Nous avons la responsabilité de prendre des mesures pour atténuer ces effets néfastes.",
         forceAnswer: false,
         canBeAnswered: true,
@@ -173,16 +230,22 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 21,
-        speaker: { /* SpriteModel pour Dorian */ },
+        speaker: {
+            path : "def0",
+            facing: "left",
+        },
         text: "Les scientifiques ont souvent des opinions divergentes.",
         forceAnswer: false,
         canBeAnswered: true,
         answers: [],
-        continue: 22,
+        continue: 23,
     },
     {
         id: 23,
-        speaker: { /* SpriteModel pour Dorian */ },
+        speaker: {
+            path : "def1",
+            facing: "left",
+        },
         text: "Certains affirment que le changement climatique est principalement dû à des causes naturelles.",
         forceAnswer: false,
         canBeAnswered: true,
@@ -191,7 +254,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 24,
-        speaker: { /* SpriteModel pour Luna (pensant) */ },
+        speaker: {
+            path : "acc0",
+            facing: "right",
+        },
         text: "(Dois-je contrer ses arguments ou souligner la prédominance des preuves en faveur de l'activité humaine?)",
         forceAnswer: false,
         canBeAnswered: false,
@@ -200,7 +266,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 25,
-        speaker: { /* SpriteModel pour Tomette */ },
+        speaker: {
+            path : "tomm",
+            facing: "right",
+        },
         text: "Luna, tu peux mentionner le consensus scientifique qui penche en faveur de l'influence humaine.",
         forceAnswer: false,
         canBeAnswered: false,
@@ -209,7 +278,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 26,
-        speaker: { /* SpriteModel pour Tomette */ },
+        speaker: {
+            path : "tomm",
+            facing: "right",
+        },
         text: "Cela renforce ton argument de manière crédible.",
         forceAnswer: false,
         canBeAnswered: false,
@@ -218,7 +290,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 27,
-        speaker: { /* SpriteModel pour Luna */ },
+        speaker: {
+            path : "acc0",
+            facing: "right",
+        },
         text: "Monsieur Shade, bien que certains scientifiques puissent avoir des opinions divergentes,",
         forceAnswer: false
         canBeAnswered: true,
@@ -227,8 +302,11 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 28,
-        speaker: { /* SpriteModel pour Luna */ },
-        text: "la grande majorité s'accorde sur le rôle significatif des activités humaines dans le changement climatique. Un consensus scientifique émerge de multiples études, et nous ne pouvons pas ignorer ces avertissements.",
+        speaker: {
+            path : "acc1",
+            facing: "right",
+        },
+        text: "la grande majorité s'accorde sur le rôle significatif des activités humaines dans le changement climatique.",
         forceAnswer: false,
         canBeAnswered: true,
         answers: [],
@@ -236,7 +314,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 29,
-        speaker: { /* SpriteModel pour Luna */ },
+        speaker: {
+            path : "acc0",
+            facing: "right",
+        },
         text: "Un consensus scientifique émerge de multiples études, et nous ne pouvons pas ignorer ces avertissements.",
         forceAnswer: false,
         canBeAnswered: true,
@@ -245,7 +326,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 30,
-        speaker: { /* SpriteModel pour Dorian */ },
+        speaker: {
+            path : "def0",
+            facing: "left",
+        },
         text: "Peut-être, mais ces mêmes scientifiques ont-ils des solutions pratiques pour préserver notre économie",
         forceAnswer: false,
         canBeAnswered: true,
@@ -254,7 +338,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 31,
-        speaker: { /* SpriteModel pour Dorian */ },
+        speaker: {
+            path : "def1",
+            facing: "left",
+        },
         text: "tout en luttant contre le changement climatique?",
         forceAnswer: false,
         canBeAnswered: true,
@@ -263,7 +350,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 32,
-        speaker: { /* SpriteModel pour Luna (pensant) */ },
+        speaker: {
+            path : "acc0",
+            facing: "right",
+        },
         text: "(Il a un point. Dois-je présenter des solutions ou souligner que des innovations sont possibles?)",
         forceAnswer: false,
         canBeAnswered: false,
@@ -272,7 +362,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 33,
-        speaker: { /* SpriteModel pour Tomette */ },
+        speaker: {
+            path : "tomm",
+            facing: "right",
+        },
         text: "Luna, enfin ! Mets en avant les innovations et les solutions qui existent. Cela montrera que tu es ouverte aux alternatives.",
         forceAnswer: false,
         canBeAnswered: false,
@@ -281,7 +374,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 34,
-        speaker: { /* SpriteModel pour Luna */ },
+        speaker: {
+            path : "acc0",
+            facing: "right",
+        },
         text: "Monsieur Shade, il est vrai que des solutions innovantes émergent, telles que les énergies renouvelables et les pratiques durables.",
         forceAnswer: false,
         canBeAnswered: true,
@@ -290,7 +386,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 35,
-        speaker: { /* SpriteModel pour Luna */ },
+        speaker: {
+            path : "acc1",
+            facing: "right",
+        },
         text: "En investissant dans ces technologies, nous pouvons non seulement préserver notre économie mais aussi construire un avenir plus durable pour tous.",
         forceAnswer: false,
         canBeAnswered: true,
@@ -299,7 +398,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 36,
-        speaker: { /* SpriteModel pour Juge */ },
+        speaker: {
+            path : "acc0",
+            facing: "right",
+        },
         text: "Vos arguments sont notés. Mme. Fourdansldos, je vous prierai de ne plus orienter le porte-paroles de votre camp, n’y même celui du camp adverse, ou des sanctions seront appliquées.",
         forceAnswer: false,
         canBeAnswered: false,
@@ -308,7 +410,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 37,
-        speaker: { /* SpriteModel pour Juge */ },
+        speaker: {
+            path : "acc0",
+            facing: "right",
+        },
         text: "N’oubliez pas que le tribunal est un lieu d’ordre et de vérité où l’accusation et la défense doivent pouvoir dialoguer à égalité. Ceci étant dit, veuillez maintenant continuer ce débat, Mr. Shade.",
         forceAnswer: false,
         canBeAnswered: false,
@@ -317,7 +422,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 38,
-        speaker: { /* SpriteModel pour Dorian */ },
+        speaker: {
+            path : "def0",
+            facing: "left",
+        },
         text: "Je vous remercie, votre Honneur. Vous déclarez que les énergies renouvelables et des pratiques durables permettraient de maintenir un avenir plus durable pour nous.",
         forceAnswer: false,
         canBeAnswered: true,
@@ -326,8 +434,11 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 39,
-        speaker: { /* SpriteModel pour Dorian */ },
-        text: " Cependant, ce n’est pas le fait d’installer des panneaux solaires coûteux qui va me permettre de gagner et de me nourrir à la fin du mois. Durable pour qui, alors ?",
+        speaker: {
+            path : "def1",
+            facing: "left",
+        },
+        text: "Cependant, ce n’est pas le fait d’installer des panneaux solaires coûteux qui va me permettre de gagner et de me nourrir à la fin du mois. Durable pour qui, alors ?",
         forceAnswer: false,
         canBeAnswered: true,
         answers: [],
@@ -335,7 +446,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 40,
-        speaker: { /* SpriteModel pour Luna (pensant) */ },
+        speaker: {
+            path : "acc0",
+            facing: "right",
+        },
         text: "(C’est ce sur quoi j’ai travaillé hier avec Tomette… Si je me rappelle bien…)",
         forceAnswer: false,
         canBeAnswered: false,
@@ -344,7 +458,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 41,
-        speaker: { /* SpriteModel pour Luna */ },
+        speaker: {
+            path : "acc0",
+            facing: "right",
+        },
         text: "Mr. Shade, vous avez raison, cela ne vous fera pas gagner directement de l’argent,",
         forceAnswer: false,
         canBeAnswered: true,
@@ -353,7 +470,10 @@ const dialogs: DialogModel[] = [
     },
     {
         id: 42,
-        speaker: { /* SpriteModel pour Luna */ },
+        speaker: {
+            path : "acc0",
+            facing: "right",
+        },
         text: "et tout le monde n’est pas capable d’investir dans de telles installations.",
         forceAnswer: false,
         canBeAnswered: true,
@@ -361,22 +481,28 @@ const dialogs: DialogModel[] = [
         continue: 43,
     },
     {
-        id: 42,
-        speaker: { /* SpriteModel pour Luna */ },
+        id: 43,
+        speaker: {
+            path : "acc1",
+            facing: "right",
+        },
         text: "Cependant, chacun devrait participer à son échelle pour pouvoir faire avancer les choses, d’un simple évier arrêté à des installations.",
         forceAnswer: false,
         canBeAnswered: true,
         answers: [],
-        continue: 43,
+        continue: 44,
     },
     {
-        id: 42,
-        speaker: { /* SpriteModel pour Luna */ },
+        id: 44,
+        speaker: {
+            path : "acc0",
+            facing: "right",
+        },
         text: "Malheureusement, il convient plutôt de modifier les politiques et les mœurs afin d’inclure le climat dans nos considérations.",
         forceAnswer: false,
         canBeAnswered: true,
         answers: [],
-        continue: 43,
+        continue: 45,
     },
 ];
 
