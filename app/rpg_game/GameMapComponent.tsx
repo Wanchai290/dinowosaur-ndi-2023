@@ -1,6 +1,7 @@
 "use client"
 import {useEffect, useState} from "react";
 import NPCComponent from "./NPCComponent";
+import ControlsDisplay from "@/app/rpg_game/ControlsDisplay";
 
 
 
@@ -16,6 +17,7 @@ export default function GameMapComponent() {
 
   return (
 	  <div className="flex justify-center items-center h-full w-full overflow-scroll">
+		  <ControlsDisplay />
 		  <div
 			  className="w-full h-full"
 			  style={{backgroundImage: "url(rpg_game_assets/background/beach.png)", backgroundSize: "contain", backgroundRepeat: "no-repeat", position:"relative", height: "1024px", width:"1024px", overflow:"hidden"}}>
