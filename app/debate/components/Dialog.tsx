@@ -484,12 +484,12 @@ const dialogs: DialogModel[] = [
         answers: [
             {
                 "text": "Suivre les conseils de Tomette.",
-                continue: 33001,
+                continue: 34,
                 weight: 1,
             },
             {
                 "text": "S’engager dans le soutien de la fission nucléaire",
-                continue: 34,
+                continue: 33001,
                 weight: -1,
             }
         ],
