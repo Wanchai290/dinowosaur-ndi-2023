@@ -34,7 +34,7 @@ export default function RootLayout({
       </Head>
       <body
         className={
-          " text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-900 " +
+          " text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-900 h-screen " +
           inter.className
         }
       >
