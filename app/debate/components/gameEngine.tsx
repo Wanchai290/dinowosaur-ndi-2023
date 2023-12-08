@@ -8,13 +8,19 @@ function render(dialogs: DialogDebate, answerSet: number, game: KaboomCtx): Game
         width: 500,
         height: 500,
     };
+    const barSize = {
+        width: 750,
+        height: 400,
+    };
     let allLoopSprites: GameObj<any>[] = [];
 
     const dialog = dialogs.getCurrentDialog();
     const answers = dialogs.getAnswers();
     const speaker = dialog.speaker;
     let speakerObj: SpriteComp = game.sprite(speaker.path);
-    speakerObj.flipX = (dialog.speaker.facing === "left");
+    let barObj: SpriteComp = game.sprite("bar");
+    speakerObj.flipX = (dialog.speaker.facing === "right");
+    barObj.flipX = (dialog.speaker.facing === "left");
     allLoopSprites.push(game.add([
         speakerObj,
         game.pos(game.width() / 2, game.height() / 2),
@@ -22,6 +28,17 @@ function render(dialogs: DialogDebate, answerSet: number, game: KaboomCtx): Game
         game.scale(
             (game.height() / spriteSize.width) / 1.2,
             (game.height() / spriteSize.height) / 1.2,
+        ),
+    ]));
+    allLoopSprites.push(game.add([
+        barObj,
+        game.pos(
+            (game.width() / 2.5) * (dialog.speaker.facing === "right" ? 1.5 : 1),
+            game.height() / 1.3),
+        game.anchor("center"),
+        game.scale(
+            (game.width() / barSize.width),
+            (game.height() / barSize.height),
         ),
     ]));
     allLoopSprites.push(game.add([
@@ -85,7 +102,7 @@ export default function debate(canvasref: HTMLCanvasElement, dialogs: DialogDeba
     });
 
     const back = game.loadSprite("back" , assetRoot + "Courtroom.jpg");
-    const bar = game.loadSprite("bar" , assetRoot + "Court_bar.jpg");
+    const bar = game.loadSprite("bar" , assetRoot + "Court_bar.png");
     const acc0 = game.loadSprite("acc0" , assetRoot + "sprite_lawyer_accusation_0.png");
     const acc1 = game.loadSprite("acc1" , assetRoot + "sprite_lawyer_accusation_1.png");
     const def0 = game.loadSprite("def0" , assetRoot + "sprite_lawyer_defense_0.png");
